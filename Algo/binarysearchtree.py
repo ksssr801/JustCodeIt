@@ -119,8 +119,9 @@ while True:
 	print ('Select from options:')
 	print ('1 : Insert')
 	print ('2 : Search')
-	print ('3 : Min Node, Max Node & Tree Height')
-	print ('4 : Traverse the tree')
+	print ('3 : Root Node, Min Node, Max Node & Tree Height')
+	print ('4 : BFS Traversal')
+	print ('5 : DFS Traversal')
 	print ('0 : Exit')
 	inp = input('Enter your choice : ')
 	if inp == 0:
@@ -141,20 +142,26 @@ while True:
 				print '\nTree is empty!'
 			else:
 				print '\n'
+				print 'Root Node : ', root.data
 				print 'Min Node : ', min_n
 				print 'Max Node : ', max_n
 				print 'Height of the tree : ', tree_height
 		elif inp == 4:
 			lvl_order = bst.level_order_traverse(root)
-			pre = bst.preorder(root)
-			inorder = bst.inorder(root)
-			post = bst.postorder(root)
 			if lvl_order == []:
 				print '\nTree is empty!'
 			else:
 				print '\n'
 				print 'BFS - Level Order Traversal : ', lvl_order
 				bst.bfs_list = []
+		elif inp == 5:
+			pre = bst.preorder(root)
+			inorder = bst.inorder(root)
+			post = bst.postorder(root)
+			if pre == []:
+				print '\nTree is empty!'
+			else:
+				print '\n'
 				print 'DFS - Preorder Traversal : ', pre
 				bst.preorder_list = []
 				print 'DFS - Inorder Traversal : ', inorder
