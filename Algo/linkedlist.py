@@ -13,7 +13,7 @@ class LinkedList:
 		self.head = None
 		self.size = 0
 
-	def insert(self, new_node, pos=None):
+	def insert_LL(self, new_node, pos=None):
 		self.size += 1
 		count = 1
 		curr_node = self.head
@@ -35,7 +35,7 @@ class LinkedList:
 				curr_node.next = new_node
 				new_node.next = temp_node
 
-	def delete(self, pos=None):
+	def delete_LL(self, pos=None):
 		count = 1
 		curr_node = self.head
 		if pos == None or pos > self.size:
@@ -53,7 +53,7 @@ class LinkedList:
 			curr_node.next = temp_node.next
 		self.size -= 1
 
-	def search(self, value=None):
+	def search_LL(self, value=None):
 		count = 0
 		pos_list = []
 		curr_node = self.head
@@ -66,7 +66,7 @@ class LinkedList:
 					pos_list.append(count)
 				curr_node = curr_node.next
 			if len(pos_list):
-				print 'Given value found at position(s) : ', pos_list
+				print 'Given value %s found at position(s) : ' % value, pos_list
 			else:
 				print 'Given value not found or LL is empty.'
 
@@ -84,30 +84,30 @@ class LinkedList:
 
 LL = LinkedList()
 
-while True:
-	print ('\nLinked List\n')
-	print ('Select from options:')
-	print ('1 : Insert')
-	print ('2 : Delete')
-	print ('3 : Search')
-	print ('4 : Print')
-	print ('0 : Exit')
-	inp = input('Enter your choice : ')
-	if inp == 0:
-		break
-	else:
-		if inp == 1:
-			data = input('Enter data: ')
-			pos = input('Enter position: ')
-			node = Node(data)
-			LL.insert(node, pos)
-		elif inp == 2:
-			pos = input('Enter position: ')
-			LL.delete(pos)
-		elif inp == 3:
-			val = input('Enter value: ')
-			LL.search(val)
-		elif inp == 4:
-			LL.print_LL()
-		else:
-			print ("Wrong Choice!")
+# while True:
+# 	print ('\nLinked List\n')
+# 	print ('Select from options:')
+# 	print ('1 : Insert')
+# 	print ('2 : Delete')
+# 	print ('3 : Search')
+# 	print ('4 : Print')
+# 	print ('0 : Exit')
+# 	inp = input('Enter your choice : ')
+# 	if inp == 0:
+# 		break
+# 	else:
+# 		if inp == 1:
+# 			data = input('Enter data: ')
+# 			pos = input('Enter position: ')
+# 			node = Node(data)
+# 			LL.insert_LL(node, pos)
+# 		elif inp == 2:
+# 			pos = input('Enter position: ')
+# 			LL.delete_LL(pos)
+# 		elif inp == 3:
+# 			val = input('Enter value: ')
+# 			LL.search_LL(val)
+# 		elif inp == 4:
+# 			LL.print_LL()
+# 		else:
+# 			print ("Wrong Choice!")

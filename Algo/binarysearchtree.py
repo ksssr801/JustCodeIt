@@ -1,4 +1,6 @@
 # Implementing Binary Search Tree
+# It takes T = O(n) time to walk an n-node BST
+# Inserting & Searching a node in BST takes T = O(h) where h = height of the tree
 
 import queue
 
