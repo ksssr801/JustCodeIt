@@ -5,8 +5,8 @@
 import queue
 
 class Node:
-	def __init__(self, data):
-		self.data = data
+	def __init__(self, value):
+		self.data = value
 		self.left = None
 		self.right = None
 		self.dups = 0
@@ -21,7 +21,7 @@ class BinarySearchTree:
 		self.postorder_list = []
 
 	def insert(self, curr_root, new_node, level=1):
-		if curr_root == None:
+		if curr_root is None:
 			curr_root = new_node
 			curr_root.dups += 1
 			print '\nNode %s is inserted at level %s.' % (curr_root.data, level)
@@ -39,7 +39,7 @@ class BinarySearchTree:
 		return curr_root
 
 	def search(self, curr_root, data, level=1, flag='root node'):
-		if curr_root == None:
+		if curr_root is None:
 			print '\nSearched node %s is not found or tree is empty!' % data
 		elif data < curr_root.data:
 			if level == 1:
@@ -56,13 +56,13 @@ class BinarySearchTree:
 		return curr_root
 
 	def min_node(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			while curr_root.left is not None:
 				curr_root = curr_root.left
 			return curr_root.data
 
 	def max_node(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			while curr_root.right is not None:
 				curr_root = curr_root.right
 			return curr_root.data
@@ -72,10 +72,10 @@ class BinarySearchTree:
 
 	# Breadth First Search
 	def level_order_traverse(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			self.Q_obj.enqueue(curr_root)
 			is_Q_empty = False
-			while is_Q_empty == False:
+			while is_Q_empty is False:
 				curr_root = self.Q_obj.Q[self.Q_obj.front]
 				self.bfs_list.append(curr_root.data)
 				if curr_root.left is not None:
@@ -89,7 +89,7 @@ class BinarySearchTree:
 
 	# Depth First Search
 	def preorder(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			self.preorder_list.append(curr_root.data)
 			self.preorder(curr_root.left)
 			self.preorder(curr_root.right)
@@ -98,7 +98,7 @@ class BinarySearchTree:
 
 	# Depth First Search
 	def inorder(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			self.inorder(curr_root.left)
 			self.inorder_list.append(curr_root.data)
 			self.inorder(curr_root.right)
@@ -107,7 +107,7 @@ class BinarySearchTree:
 
 	# Depth First Search
 	def postorder(self, curr_root):
-		if curr_root != None:
+		if curr_root is not None:
 			self.postorder(curr_root.left)
 			self.postorder(curr_root.right)
 			self.postorder_list.append(curr_root.data)

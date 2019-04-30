@@ -1,4 +1,4 @@
-# Impementing hash tables : Open Hashing (Chaining) using Linked List
+# Implementing hash tables : Open Hashing (Chaining) using Linked List
 # In direct addressing: insert, search & delete takes T = O(1) time
 
 # Using Linked List, so
@@ -10,8 +10,8 @@
 import linkedlist
 
 class HashObject:
-	def __init__(self, data):
-		self.data = data
+	def __init__(self, value):
+		self.data = value
 		self.next = None
 
 class Hashing:
@@ -21,9 +21,9 @@ class Hashing:
 		self.hash_table = [None]*length
 		self.len_table = [0]*length
 
-	def insert_h_key(self, obj, pos=None):
+	def insert_h_key(self, obj):
 		key = obj.data % self.table_size
-		if self.hash_table[key] == None:
+		if self.hash_table[key] is None:
 			self.hash_table[key] = obj
 			self.LL_obj.size = self.len_table[key] + 1
 		else:
@@ -35,7 +35,7 @@ class Hashing:
 	def search_h_key(self, value=None):
 		key = value % self.table_size
 		print '\nIn the Hash Table, at key %s,' % key
-		if value != None:
+		if value is not None:
 			key = value % self.table_size
 			self.LL_obj.head = self.hash_table[key]
 			self.LL_obj.search_LL(value)
@@ -43,9 +43,9 @@ class Hashing:
 			print 'Wrong value provided!'
 
 	# Need to provide the key of Hash Table. For the given key, it will delete last node of the Linked List.
-	def delete_h_key(self, value, pos=None):
+	def delete_h_key(self, value):
 		key = value % self.table_size
-		if self.hash_table[key] == None:
+		if self.hash_table[key] is None:
 			print 'Given key has no value to delete!'
 		else:
 			self.LL_obj.size = self.len_table[key]
@@ -58,11 +58,11 @@ class Hashing:
 
 	def print_hash_table(self):
 		print '\nIn the Hash Table of size %s : ' % self.table_size
-		for val in range(self.table_size):
-			if self.hash_table[val] != None:
-				print '\nFor key %s :' % val
-				self.LL_obj.head = self.hash_table[val]
-				self.LL_obj.size = self.len_table[val]
+		for key in range(self.table_size):
+			if self.hash_table[key] is not None:
+				print '\nFor key %s :' % key
+				self.LL_obj.head = self.hash_table[key]
+				self.LL_obj.size = self.len_table[key]
 				self.LL_obj.print_LL()
 		print 'LL Length Table : ',self.len_table
 

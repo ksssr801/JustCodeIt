@@ -17,7 +17,7 @@ class LinkedList:
 		self.size += 1
 		count = 1
 		curr_node = self.head
-		if pos == None or pos > self.size:
+		if pos is None or pos > self.size:
 			pos = self.size
 		if self.head is None:
 			self.head = new_node
@@ -28,7 +28,7 @@ class LinkedList:
 			while count < (pos - 1):
 				curr_node = curr_node.next
 				count += 1
-			if curr_node.next == None:
+			if curr_node.next is None:
 				curr_node.next = new_node
 			else:
 				temp_node = curr_node.next
@@ -38,9 +38,9 @@ class LinkedList:
 	def delete_LL(self, pos=None):
 		count = 1
 		curr_node = self.head
-		if pos == None or pos > self.size:
+		if pos is None or pos > self.size:
 			pos = self.size
-		if self.head == None:
+		if self.head is None:
 			self.size += 1
 			print "LL is empty."
 		elif pos < 2:
@@ -57,8 +57,8 @@ class LinkedList:
 		count = 0
 		pos_list = []
 		curr_node = self.head
-		if value == None:
-			print 'Wrong value provided or value not present!'
+		if value is None:
+			print 'No value provided!'
 		else:
 			while curr_node is not None:
 				count += 1

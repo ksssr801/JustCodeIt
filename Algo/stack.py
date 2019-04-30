@@ -7,8 +7,8 @@ class Stack:
 	def is_stack_empty(self):
 		return self.stack == []
 
-	def push_data(self, data):
-		self.stack.append(data)
+	def push_data(self, value):
+		self.stack.append(value)
 		print 'Updated Stack is', self.stack
 
 	def pop_data(self):
