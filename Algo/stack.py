@@ -1,5 +1,6 @@
 # Implementing Stack, LIFO, T = O(1) for push and pop
 
+
 class Stack:
 	def __init__(self):
 		self.stack = []

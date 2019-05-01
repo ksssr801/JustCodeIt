@@ -4,12 +4,14 @@
 
 import queue
 
+
 class Node:
     def __init__(self, value):
         self.data = value
         self.left = None
         self.right = None
         self.dups = 0
+
 
 class BinarySearchTree:
     def __init__(self):
@@ -94,7 +96,6 @@ class BinarySearchTree:
             self.preorder(curr_root.left)
             self.preorder(curr_root.right)
         return self.preorder_list
-        self.preorder_list = []
 
     # Depth First Search
     def inorder(self, curr_root):
@@ -103,7 +104,6 @@ class BinarySearchTree:
             self.inorder_list.append(curr_root.data)
             self.inorder(curr_root.right)
         return self.inorder_list
-        self.inorder_list = []
 
     # Depth First Search
     def postorder(self, curr_root):
@@ -112,7 +112,7 @@ class BinarySearchTree:
             self.postorder(curr_root.right)
             self.postorder_list.append(curr_root.data)
         return self.postorder_list
-        self.postorder_list = []
+
 
 root = None
 bst = BinarySearchTree()

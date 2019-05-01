@@ -9,10 +9,12 @@
 
 import linkedlist
 
+
 class HashObject:
     def __init__(self, value):
         self.data = value
         self.next = None
+
 
 class Hashing:
     def __init__(self, length):
@@ -29,7 +31,7 @@ class Hashing:
         else:
             self.LL_obj.size = self.len_table[key]
             self.LL_obj.head = self.hash_table[key]
-            self.LL_obj.insert_LL(obj)
+            self.LL_obj.insert_ll(obj)
         self.len_table[key] = self.LL_obj.size
 
     def search_h_key(self, value=None):
@@ -38,7 +40,7 @@ class Hashing:
         if value is not None:
             key = value % self.table_size
             self.LL_obj.head = self.hash_table[key]
-            self.LL_obj.search_LL(value)
+            self.LL_obj.search_ll(value)
         else:
             print 'Wrong value provided!'
 
@@ -49,12 +51,11 @@ class Hashing:
         else:
             self.LL_obj.size = self.len_table[key]
             self.LL_obj.head = self.hash_table[key]
-            self.LL_obj.delete_LL(value)
+            self.LL_obj.delete_ll(value)
             self.hash_table[key] = self.LL_obj.head
             print '\nFor key %s, after deletion :' % key
-            self.LL_obj.print_LL()
+            self.LL_obj.print_ll()
         self.len_table[key] = self.LL_obj.size
-
 
     def print_hash_table(self):
         flag = False
@@ -69,10 +70,11 @@ class Hashing:
                     print '\nFor key %s :' % key
                     self.LL_obj.head = self.hash_table[key]
                     self.LL_obj.size = self.len_table[key]
-                    self.LL_obj.print_LL()
+                    self.LL_obj.print_ll()
             print 'LL Length Table : ',self.len_table
         else:
             print '\nHash table is empty!'
+
 
 print ('\nHash Table\n')
 size_t = input('Enter size: ')

@@ -3,17 +3,19 @@
 # Deletion : Runs in O(1) time but for given key, T = O(n) in worst case.
 # Searching : For 'n' size list, T = O(n) in worst case
 
+
 class Node:
 	def __init__(self, data):
 		self.data = data
 		self.next = None
+
 
 class LinkedList:
 	def __init__(self):
 		self.head = None
 		self.size = 0
 
-	def insert_LL(self, new_node, pos=None):
+	def insert_ll(self, new_node, pos=None):
 		self.size += 1
 		count = 1
 		curr_node = self.head
@@ -35,7 +37,7 @@ class LinkedList:
 				curr_node.next = new_node
 				new_node.next = temp_node
 
-	def delete_LL(self, value=None):
+	def delete_ll(self, value=None):
 		count = 1
 		pos = 0
 		curr_node = self.head
@@ -62,7 +64,7 @@ class LinkedList:
 					curr_node.next = temp_node.next
 				self.size -= 1
 
-	def search_LL(self, value=None):
+	def search_ll(self, value=None):
 		count = 0
 		pos_list = []
 		curr_node = self.head
@@ -71,7 +73,7 @@ class LinkedList:
 		else:
 			while curr_node is not None:
 				count += 1
-				if curr_node.data == value:
+				if curr_node.data is value:
 					pos_list.append(count)
 				curr_node = curr_node.next
 			if len(pos_list):
@@ -79,7 +81,7 @@ class LinkedList:
 			else:
 				print 'Given value not found or LL is empty.'
 
-	def print_LL(self):
+	def print_ll(self):
 		l_list = []
 		curr_node = self.head
 		while True:
@@ -90,6 +92,7 @@ class LinkedList:
 				break
 		print 'Linked List : ', l_list
 		print 'Length of LL : ', self.size
+
 
 LL = LinkedList()
 
@@ -109,14 +112,14 @@ LL = LinkedList()
 # 			data = input('Enter data: ')
 # 			pos = input('Enter position: ')
 # 			node = Node(data)
-# 			LL.insert_LL(node, pos)
+# 			LL.insert_ll(node, pos)
 # 		elif inp == 2:
 # 			val = input('Enter value: ')
-# 			LL.delete_LL(val)
+# 			LL.delete_ll(val)
 # 		elif inp == 3:
 # 			val = input('Enter value: ')
-# 			LL.search_LL(val)
+# 			LL.search_ll(val)
 # 		elif inp == 4:
-# 			LL.print_LL()
+# 			LL.print_ll()
 # 		else:
 # 			print ("Wrong Choice!")

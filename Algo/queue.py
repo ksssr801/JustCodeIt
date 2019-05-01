@@ -1,4 +1,5 @@
-# Impementing Queue, FIFO, T = O(1) for enqueue and dequeue
+# Implementing Queue, FIFO, T = O(1) for enqueue and dequeue
+
 
 class Queue:
 	def __init__(self):
@@ -36,6 +37,7 @@ class Queue:
 			print "Current Q front is ", self.count
 			print "Current Q rear is ", self.rear
 		self.count += 1
+
 
 q = Queue()
 # while True:
