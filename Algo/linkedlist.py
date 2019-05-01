@@ -42,7 +42,7 @@ class LinkedList:
 		pos = 0
 		curr_node = self.head
 		if self.head is None:
-			print 'LL is empty!'
+			print ('LL is empty!')
 		else:
 			while curr_node.data is not value:
 				pos += 1
@@ -51,7 +51,8 @@ class LinkedList:
 					break
 			pos += 1
 			if pos > self.size:
-				print 'Provided value %s is not present in LL!' % value
+				print ('Provided value {} is not present in LL!'.format(value))  # python < 3.6
+				# print f'Provided value {value} is not present in LL!'  # python > 3.5
 			else:
 				curr_node = self.head
 				if pos < 2:
@@ -69,17 +70,18 @@ class LinkedList:
 		pos_list = []
 		curr_node = self.head
 		if value is None:
-			print 'No value provided!'
+			print ('No value provided!')
 		else:
 			while curr_node is not None:
 				count += 1
-				if curr_node.data is value:
+				if curr_node.data == value:
 					pos_list.append(count)
 				curr_node = curr_node.next
 			if len(pos_list):
-				print 'Given value %s found at position(s) : ' % value, pos_list
+				print ('Given value {} found at position(s) : {}'.format(value, pos_list))  # python < 3.6
+				# print f'Given value {value} found at position(s) : {pos_list}'  # python > 3.5
 			else:
-				print 'Given value not found or LL is empty.'
+				print ('Given value not found or LL is empty.')
 
 	def print_ll(self):
 		l_list = []
@@ -90,8 +92,12 @@ class LinkedList:
 				curr_node = curr_node.next
 			else:
 				break
-		print 'Linked List : ', l_list
-		print 'Length of LL : ', self.size
+		# python < 3.6
+		print ('Linked List : {}'.format(l_list))
+		print ('Length of LL : {}'.format(self.size))
+		# python > 3.5
+		# print f'Linked List : {l_list}'
+		# print f'Length of LL : {self.size}'
 
 
 LL = LinkedList()

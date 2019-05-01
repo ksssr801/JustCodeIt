@@ -24,18 +24,23 @@ class Queue:
 	def dequeue(self):
 		if_empty = self.is_Q_empty()
 		if if_empty:
-			print "Q is empty."
+			print ("Q is empty.")
 		else:
 			del self.Q[self.front]
 
 	def print_Q(self):
 		if_empty = self.is_Q_empty()
 		if if_empty:
-			print "Q is empty."
+			print ("Q is empty.")
 		else:
-			print "Current Q is ", self.Q, self.Q[0]
-			print "Current Q front is ", self.count
-			print "Current Q rear is ", self.rear
+			# python < 3.6
+			print ("Current Q is {}".format(self.Q))
+			print ("Current Q front is {}".format(self.count))
+			print ("Current Q rear is {}".format(self.rear))
+			# python > 3.5
+			# print f"Current Q is {self.Q}{self.Q[0]}"
+			# print f"Current Q front is {self.count}"
+			# print f"Current Q rear is {self.rear}"
 		self.count += 1
 
 
