@@ -35,23 +35,32 @@ class LinkedList:
 				curr_node.next = new_node
 				new_node.next = temp_node
 
-	def delete_LL(self, pos=None):
+	def delete_LL(self, value=None):
 		count = 1
+		pos = 0
 		curr_node = self.head
-		if pos is None or pos > self.size:
-			pos = self.size
 		if self.head is None:
-			self.size += 1
-			print "LL is empty."
-		elif pos < 2:
-			self.head = self.head.next
+			print 'LL is empty!'
 		else:
-			while count < (pos - 1):
+			while curr_node.data is not value:
+				pos += 1
 				curr_node = curr_node.next
-				count += 1
-			temp_node = curr_node.next
-			curr_node.next = temp_node.next
-		self.size -= 1
+				if curr_node is None:
+					break
+			pos += 1
+			if pos > self.size:
+				print 'Provided value %s is not present in LL!' % value
+			else:
+				curr_node = self.head
+				if pos < 2:
+					self.head = self.head.next
+				else:
+					while count < (pos - 1):
+						curr_node = curr_node.next
+						count += 1
+					temp_node = curr_node.next
+					curr_node.next = temp_node.next
+				self.size -= 1
 
 	def search_LL(self, value=None):
 		count = 0
@@ -102,8 +111,8 @@ LL = LinkedList()
 # 			node = Node(data)
 # 			LL.insert_LL(node, pos)
 # 		elif inp == 2:
-# 			pos = input('Enter position: ')
-# 			LL.delete_LL(pos)
+# 			val = input('Enter value: ')
+# 			LL.delete_LL(val)
 # 		elif inp == 3:
 # 			val = input('Enter value: ')
 # 			LL.search_LL(val)
