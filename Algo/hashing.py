@@ -16,7 +16,7 @@ class HashObject:
         self.next = None
 
 
-class Hashing:
+class OpenHashing:
     def __init__(self, length):
         self.LL_obj = linkedlist.LinkedList()
         self.table_size = length
@@ -84,7 +84,7 @@ class Hashing:
 print ('\nHash Table\n')
 size_t = input('Enter size: ')
 # size_t = map(int, size_t)  # python 3.x
-hash_t = Hashing(size_t)
+hash_t = OpenHashing(size_t)
 while True:
     print ('\nHash Table\n')
     print ('Select from options:')
