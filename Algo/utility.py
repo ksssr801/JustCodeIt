@@ -5,7 +5,8 @@ class Utility:
     def __init__(self):
         pass
 
-    def str_to_list_conv(self, str_val=''):
+    @staticmethod
+    def str_to_list_converter(str_val=''):
         # Converting string to list
         # Input : 'a,b,c' or '[a,b,c]' or '1,2,3' or '[1,2,3]'
         # Output : ['a','b','c'] or [1,2,3]

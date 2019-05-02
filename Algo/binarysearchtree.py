@@ -63,13 +63,15 @@ class BinarySearchTree:
             # print f'\nSearched node {data} found at level {level} ({flag})!'  # python > 3.5
         return curr_root
 
-    def min_node(self, curr_root):
+    @staticmethod
+    def min_node(curr_root):
         if curr_root is not None:
             while curr_root.left is not None:
                 curr_root = curr_root.left
             return curr_root.data
 
-    def max_node(self, curr_root):
+    @staticmethod
+    def max_node(curr_root):
         if curr_root is not None:
             while curr_root.right is not None:
                 curr_root = curr_root.right
