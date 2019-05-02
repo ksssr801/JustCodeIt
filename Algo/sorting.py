@@ -88,13 +88,13 @@ while True:
             val_set = raw_input('Enter value set: ')
             # val_set = input('Enter value set: ') # python 3.x
             data_set = sort_obj.insertion_sort(val_set)
-            print ('Insertion Sort, Sorted Set : {}'.format(data_set))  # python < 3.6
+            print ('Sorted Set : {}'.format(data_set))  # python < 3.6
             # print f'Sorted Set : {data_set}'  # python > 3.5
         if inp == 2:
             val_set = raw_input('Enter value set: ')
             # val_set = input('Enter value set: ') # python 3.x
             data_set = sort_obj.merge_sort_driver(val_set)
-            print ('Merge Sort, Sorted Set : {}'.format(data_set))  # python < 3.6
+            print ('Sorted Set : {}'.format(data_set))  # python < 3.6
             # print f'Sorted Set : {data_set}'  # python > 3.5
         else:
             print ("Wrong Choice!")
